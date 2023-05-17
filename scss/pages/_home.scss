@@ -1,0 +1,25 @@
+.home-img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid black;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.home-buton {
+    display: flex;
+    place-content: center;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.accordion-item {
+    text-align: center;
+    background: linear-gradient(rgb(238, 77, 2), orange);
+}
+
+
+.accordion-button {
+    background-color: rgb(219, 151, 126);
+    color: rgb(99, 55, 41);
+}

@@ -1,116 +1,112 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 .title {
-    display: grid;
-    grid-template-rows: 50px;
-    grid-template-columns: 360px;
-    place-content: center;
-    place-items: center;
-    place-self: center;
-    font-size: 1.5rem;
-    background-color: rgb(240, 109, 2);
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.profesionales {
-    background: linear-gradient(rgb(238, 77, 2), orange);
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-    grid-template-rows: auto;
-    place-content: center;
-    margin-top: 10px;
-    gap: 10px;
-    padding: 10px;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 360px;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  font-size: 1.5rem;
+  background-color: rgb(240, 109, 2);
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 .navbar {
-    background: linear-gradient(rgb(238, 77, 2), orange);
-}
-
-.card {
-    border: solid rgb(240, 109, 2);
-    padding: 10px;
-}
-
-.card-img-top {
-    place-content: center;
-    place-items: center;
-    height: 300px;
-    padding: 10px;
+  background: linear-gradient(rgb(238, 77, 2), orange);
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-}
-
-.home-img {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: solid black;
-    border-radius: 10px;
-    padding: 0px;
-}
-
-.home-buton {
-    display: flex;
-    place-content: center;
-    text-decoration: none;
-    margin: 15px;
-}
-
-.accordion-item {
-    text-align: center;
-    background: linear-gradient(rgb(238, 77, 2), orange);
-}
-
-.accordion-button {
-    background-color: rgb(219, 151, 126);
-    color: rgb(99, 55, 41);
+  width: 100px;
+  height: 100px;
 }
 
 .navfooter {
-    display: flex;
-    place-content: end;
-    list-style: none;
-    column-gap: 5px;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    padding: 10px;
-    background: linear-gradient(rgb(238, 77, 2), orange);
-    border: solid black;
-
-    .icons-foot {
-        width: 12px;
-        height: 12px;
-    }
+  display: flex;
+  place-content: end;
+  list-style: none;
+  column-gap: 5px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  padding: 10px;
+  background: linear-gradient(rgb(238, 77, 2), orange);
+  border: solid black;
+}
+.navfooter .icons-foot {
+  width: 12px;
+  height: 12px;
 }
 
 .list-foot {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  place-items: center;
+  border: solid black;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.home-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid black;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.home-buton {
+  display: flex;
+  place-content: center;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.accordion-item {
+  text-align: center;
+  background: linear-gradient(rgb(238, 77, 2), orange);
+}
+
+.accordion-button {
+  background-color: rgb(219, 151, 126);
+  color: rgb(99, 55, 41);
+}
+
+.profesionales {
+  background: linear-gradient(rgb(238, 77, 2), orange);
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: auto;
+  place-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  border: solid rgb(240, 109, 2);
+  padding: 10px;
+}
+
+.card-img-top {
+  place-content: center;
+  place-items: center;
+  height: 300px;
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .profesionales {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    place-items: center;
-    border: solid black;
-    padding: 10px;
-    color: white;
-    background-color: black;
-
+  }
 }
 
-/*@media (max-width:767px)
-@media (min-width:768px) and (max-width:1023px)
-@media (min-width:1024px)*/
-
-@media (max-width:767px) {
-    .profesionales {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-    }
-}
+/*# sourceMappingURL=styles.css.map */
