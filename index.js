@@ -7,6 +7,128 @@ let profesionales = [
     { nombre: "Enzo", categoria: "A", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "General", dias: "Ma y Vi", turno: "Noche" },
     { nombre: "Gabriel", categoria: "C", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "Boxeo", dias: "L y Mi", turno: "Noche" },
 ]
+
+//--------- pasar de un string a un objeto con JSON-----------//
+localStorage.setItem("list", JSON.stringify(profesionales));
+profesionales = JSON.parse(localStorage.getItem("list"));
+console.log(profesionales);
+
+//---------------------------------------------------------//
+const nombreForm = document.getElementById("nombreForm")
+const mailForm = document.getElementById("mailForm")
+const celular = document.getElementById("telForm")
+const botonForm = document.getElementById("botonForm")
+const nombreProfesional = document.getElementById("profesionalForm")
+const planSeleccionado = document.getElementById("sleccionPlan")
+
+const participantes = [
+    { nombre: "Ana" }
+]
+//------nombre en el local storege----------------//
+nombreForm.addEventListener("input", () => {
+    const valorInput = nombreForm;
+    participantes.push(valorInput);
+    localStorage.setItem("valorNombre", valorInput);
+}); console.log(participantes)
+
+
+
+
+
+
+window.addEventListener("load", () => {
+    const valorGuardado = localStorage.getItem("valorNombre");
+    if (valorGuardado) {
+        nombreForm.value = valorGuardado;
+    }
+});
+
+botonForm.addEventListener("click", () => {
+    const valorInput = nombreForm.value;
+    localStorage.setItem("valorNombre", valorInput);
+});
+
+//----------mail en el local storage----------//
+mailForm.addEventListener("input", () => {
+    const valorInput = mailForm.value;
+    localStorage.setItem("valorMail", valorInput);
+});
+
+window.addEventListener("load", () => {
+    const valorGuardadoMail = localStorage.getItem("valorMail");
+    if (valorGuardadoMail) {
+        mailForm.value = valorGuardadoMail;
+    }
+});
+
+botonForm.addEventListener("click", () => {
+    const valorInput = mailForm.value;
+    localStorage.setItem("valorMail", valorInput);
+});
+//----------numero en el local storage----------//
+celular.addEventListener("input", () => {
+    const valorInputCelular = celular.value;
+    localStorage.setItem("valorCelular", valorInputCelular);
+});
+
+window.addEventListener("load", () => {
+    const valorGuardadoCelular = localStorage.getItem("valorCelular");
+    if (valorGuardadoCelular) {
+        celular.value = valorGuardadoCelular;
+    }
+});
+
+botonForm.addEventListener("click", () => {
+    const valorInputBoton = celular.value;
+    localStorage.setItem("valorCelular", valorInputBoton);
+});
+
+//------------Nombre del profesional--------//
+nombreProfesional.addEventListener("input", () => {
+    const valorInputProf = nombreProfesional.value;
+    localStorage.setItem("valorProfesional", valorInputProf);
+});
+
+window.addEventListener("load", () => {
+    const valorInputProf = localStorage.getItem("valorProfesional");
+    if (valorInputProf) {
+        nombreProfesional.value = valorInputProf;
+    }
+});
+
+botonForm.addEventListener("click", () => {
+    const valorBoton = nombreProfesional.value;
+    localStorage.setItem("valorProfesional", valorBoton);
+});
+
+//------------Seleccion Plan--------//
+planSeleccionado.addEventListener("input", () => {
+    const valorInputPlan = valorInputPlan.value;
+    localStorage.setItem("valorProfesional", valorInputPlan);
+});
+
+window.addEventListener("load", () => {
+    const valorInputPlan = localStorage.getItem("valorPlan");
+    if (valorInputPlan) {
+        planSeleccionado.value = valorInputPlan;
+    }
+});
+
+botonForm.addEventListener("click", () => {
+    const valorBoton = planSeleccionado.value;
+    localStorage.setItem("valorPlan", valorBoton);
+    alert(nombreForm.value + " Felicitaciones un cordinador se contactara con usted")
+});
+
+
+/*
+const botonContratacionForm = document.getElementById("botonContratacion");
+botonContratacionForm.addEventListener("click", () => {
+    window.location.href = "fomulario.html";
+});
+*/
+
+/*
 profesionales.forEach((Element) => console.log(Element));
 //console.log(profesionales)//imprime la lista de los elemento
 
@@ -16,7 +138,7 @@ const participantes = [
 
 const resultadoProfeAngel = profesionales.filter((el) => {
     return profesionales.nombre = "Angel";
-}) 
+})
 console.log(resultadoProfeAngel)
 
 const agregarParticipanteAlArray = () => {//Futura base de datos
@@ -51,3 +173,28 @@ agregarParticipanteAlArray();//proximamente base de datos
 participantes.forEach((Element) => console.log(Element));
 
 alert("A continuacion selecciona el plan requerido")
+
+const planes = [
+    { plan: "oro" },
+    { plan: "plata" } 
+]
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,10 +38,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <script src="../index.js"></script>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -57,7 +62,7 @@
                             <a class="nav-link active" aria-current="page" href="../pages/home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../pages/profesionales.html">Profecionales</a>
+                            <a class="nav-link" href="../pages/profesionales.html">Profesionales</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/contacto.html">Contacto</a>
@@ -78,29 +83,24 @@
     </header>
 
     <main>
-        <section>
+        <section class="planTarjetas">
             <div class="card mb-3">
-                <img src="../img/plata.jpg" class="card-img-top" alt="...">
+                <img src="../img/plata.jpg" class="cardPlan-img-top" alt="...">
                 <div class="card-body">
                     <p class="parrafo"> Por mes un total de 12 clases </p>
-                    <p class="parrafo"> 24000/ al mes---clase 2000$ </p>
-                    <p class="parrafo"> 20400/ al mes---clase 1700$</p>
+                    <p class="parrafo"> Tres veces por semana </p>
+                    <p class="parrafo"> 13600/ al mes---clase 1700$</p>
                 </div>
-                <input type="radio" class="btnProf btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                <label class="btnProf btn btn-outline-danger" for="danger-outlined">Confirmar</label>
+                
             </div>
 
             <div class="card mb-3">
-                <img src="../img/oro.jpg" class="card-img-top" alt="...">
+                <img src="../img/oro.jpg" class="cardPlan-img-top" alt="...">
                 <div class="card-body">
                     <p class="parrafo"> Por mes un total de 8 clases </p>
-                    <p class="parrafo"> 16000/ al mes---clase 2000$ </p>
+                    <p class="parrafo"> Dos veces por semana </p>
                     <p class="parrafo"> 13600/ al mes---clase 1700$</p>
                 </div>
-                <input type="radio" class="btnProf btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                <label class="btnProf btn btn-outline-danger" for="danger-outlined">Confirmar</label>
-            </div>
-
             </div>
         </section>
     </main>
@@ -156,6 +156,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="../index.js"></script>
 </body>
 
 </html>

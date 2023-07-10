@@ -1,7 +1,7 @@
 .profesionales {
     background: linear-gradient(rgb(238, 77, 2), orange);
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 400px);
     grid-template-rows: auto;
     place-content: center;
     margin-top: 10px;
@@ -10,13 +10,16 @@
 }
 
 .card {
+    height: auto;
     border: solid rgb(240, 109, 2);
     padding: 10px;
 }
 
-.card:hover {
+.cardProfesionales:hover {
+    background-color: rgb(224, 202, 0);
+    place-content: center;
+    border: solid rgb(3, 2, 0);
     border-radius: 10px;
-    border: solid black;
 }
 
 .card-img-top {
@@ -50,3 +53,56 @@
     }
 }
 
+
+//------Tarjeta padre-----//
+.cardProfesionales {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 300px;
+    background-color: rgb(201, 129, 81);
+    place-content: center;
+    border: solid rgb(3, 2, 0);
+    border-radius: 10px;
+}
+
+//contratar profesional//
+.btnProfesionales {
+    width: 280px;
+    place-items: center;
+    place-self: center;
+    place-content: center;
+    margin: 10px;
+    height: auto;
+    background: linear-gradient(rgb(238, 77, 2), orange);
+    border: solid black;
+    border-radius: 10px;
+    color: black;
+}
+
+//contratar profesional desplegable//
+.btnProfContratacion {
+    width: 280px;
+    place-items: center;
+    place-self: center;
+    place-content: center;
+    margin: 10px;
+    height: auto;
+    background: linear-gradient(rgb(238, 77, 2), orange);
+    color: rgb(14, 9, 9);
+    font-size: 1.10rem;
+    border: solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    text-decoration: solid;
+}
+
+
+//----dias y horarios--------//
+.cardProfesionalesDias {
+    border: solid black;
+    border-radius: 10px;
+    background: linear-gradient(rgb(238, 77, 2), orange);
+    text-align: center;
+    padding: 10px;
+}
