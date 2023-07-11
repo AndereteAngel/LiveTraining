@@ -1,0 +1,14 @@
+.formIngreso {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 300px 300px;
+    place-content: center;
+    place-items: center;
+    place-self: center;
+    border: solid black;
+    background-color: aqua;
+}
+
+.btnProfContratacion {
+    margin: 20px;
+}

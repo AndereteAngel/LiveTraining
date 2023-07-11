@@ -8,6 +8,44 @@ let profesionales = [
     { nombre: "Gabriel", categoria: "C", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "Boxeo", dias: "L y Mi", turno: "Noche" },
 ]
 
+// Array con las credenciales válidas//
+const inputUsuarioInicial = document.getElementById("floatingInput")
+const inputContraseñaInicial = document.getElementById("floatingPassword")
+const botonIngreso = document.getElementById("botonIngreso")
+
+const usuarios = [
+    { usuario: "Angel", contraseña: "angel28" },
+    { usuario: "Macarena", contraseña: "macarena26" },
+    { usuario: "Bautista", contraseña: "bauti24" }
+];
+
+// Función para validar el usuario y contraseña
+
+function validarCredenciales(usuario, contraseña) {
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].usuario === usuario && usuarios[i].contraseña === contraseña) {
+            return true; // Credenciales válidas
+        }
+    }
+    return false; // Credenciales inválidas
+}
+
+inputUsuarioInicial.addEventListener("input", validarInput);
+inputContraseñaInicial.addEventListener("input", validarInput);
+
+function validarInput() {
+    const usuario = inputUsuarioInicial.value;
+    const contraseña = inputContraseñaInicial.value;
+
+    if (validarCredenciales(usuario, contraseña)) {
+        console.log("Credenciales válidas");
+        botonIngreso.href = "home.html";  // Actualiza el atributo href del botón
+    } else {
+        console.log("Credenciales inválidas");
+        botonIngreso.removeAttribute("href");  // Elimina el atributo href del botón
+    }
+}
+
 //--------- pasar de un string a un objeto con JSON-----------//
 localStorage.setItem("list", JSON.stringify(profesionales));
 profesionales = JSON.parse(localStorage.getItem("list"));
@@ -24,17 +62,12 @@ const planSeleccionado = document.getElementById("sleccionPlan")
 const participantes = [
     { nombre: "Ana" }
 ]
+
 //------nombre en el local storege----------------//
 nombreForm.addEventListener("input", () => {
-    const valorInput = nombreForm;
-    participantes.push(valorInput);
-    localStorage.setItem("valorNombre", valorInput);
-}); console.log(participantes)
-
-
-
-
-
+    const valorInput = nombreForm.value;
+    localStorage.setItem("valorNombre", valorInput)
+})
 
 window.addEventListener("load", () => {
     const valorGuardado = localStorage.getItem("valorNombre");
@@ -120,13 +153,14 @@ botonForm.addEventListener("click", () => {
     alert(nombreForm.value + " Felicitaciones un cordinador se contactara con usted")
 });
 
+//---------Maps y plazas----------//
 
-/*
-const botonContratacionForm = document.getElementById("botonContratacion");
-botonContratacionForm.addEventListener("click", () => {
-    window.location.href = "fomulario.html";
-});
-*/
+//---------Plaza Larrazabal-------//
+
+
+
+
+
 
 /*
 profesionales.forEach((Element) => console.log(Element));

@@ -58,6 +58,21 @@
   background-color: black;
 }
 
+.formIngreso {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 300px 300px;
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  border: solid black;
+  background-color: aqua;
+}
+
+.btnProfContratacion {
+  margin: 20px;
+}
+
 .home-img {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -180,6 +195,23 @@
   background: linear-gradient(rgb(238, 77, 2), orange);
   text-align: center;
   padding: 10px;
+}
+
+.plazas {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(2, 100px);
+  place-content: center;
+  place-items: center;
+  place-self: center;
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+  border: solid black;
+  background: linear-gradient(rgb(238, 77, 2), orange);
+}
+.plazas .imgPlazaLarrazabal {
+  border: solid rgb(179, 7, 7);
 }
 
 .cardPlan-img-top {
