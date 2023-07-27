@@ -77,18 +77,80 @@
     </header>
 
     <main>
-        <div class="formIngreso-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="usuario">
-            <label for="floatingInput">Usuario</label>
-        </div>
-        <div class="formIngreso-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="contraseña">
-            <label for="floatingPassword">Contraseña</label>
-        </div>
+        <h1 class="title container-fluid">Arma tu entrenamiento</h1>
+        <section id="carrito-section" class="row carrito">
+            <h2>Tu lista</h2>
+            <ul id="carrito-list" class="listaItem">
+                <li>Clases Extras</li>
+                <li>Invitado</li>
+                <li>Clase particular</li>
+                <li>Fin de semana</li>
+                <li>Doble turno</li>
+                <li>Acuaticas</li>
+                <li>Para niños/as</li>
+                <li>Plan nutricional</li>
+            </ul>
+            <p>Total de compra: <span id="total-compra">0</span></p>
+        </section>
+        <section>
+            <div class="container-fluid">
+                <h2>Paquetes</h2>
+            </div>
+            <div class="row itm">
+                <div class="tarjetasItem">
+                    <h3>Clases Extras</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
 
-        <a id="botonIngreso" class="btnProfContratacion" href="../pages/home.html">Ingresar</a>
+                <div class="tarjetasItem">
+                    <h3>Invitado</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Clase particular</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Fin de semana</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Doble turno</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Acuaticas</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Para niños/as</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+
+                <div class="tarjetasItem">
+                    <h3>Plan nutricional</h3>
+                    <img src="" alt="">
+                    <p>lorem 10</p>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg" id="confirm">Confirmacion</button>
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+            </div>
+        </section>
     </main>
-
 
     <footer>
         <ul class="navfooter">
@@ -139,6 +201,9 @@
     <script>
         AOS.init();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script src="../index.js"></script>
 </body>
 

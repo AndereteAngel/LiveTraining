@@ -1,14 +1,43 @@
-.formIngreso {
+.itm {
+    margin: 10px;
+
+    :hover {
+        transform: scale(1.1);
+    }
+}
+
+.tarjetasItem {
+    display: grid;
+    place-content: center;
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: solid black;
+    background: linear-gradient(rgb(238, 77, 2), orange);
+    border-radius: 10px;
+}
+
+.carrito {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 300px 300px;
+    grid-template-rows: auto;
+    border-radius: 10px;
     place-content: center;
     place-items: center;
     place-self: center;
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
     border: solid black;
-    background-color: aqua;
+    background: linear-gradient(rgb(238, 77, 2), orange);
 }
 
-.btnProfContratacion {
-    margin: 20px;
+.listaItem {
+    display: grid;
+    place-content: center;
+    list-style: none;
+    font-style: oblique;
+    color: solid;
 }

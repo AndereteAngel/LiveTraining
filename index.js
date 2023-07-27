@@ -1,219 +1,212 @@
 
-
 let profesionales = [
     { nombre: "Angel", categoria: "D", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "futfuncional", dias: "L y Mi", turno: "Mañana" },
     { nombre: "Macarena", categoria: "B", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "funcional", dias: "Ma y J", turno: "Mañana" },
     { nombre: "Natalia", categoria: "C", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "Yoga", dias: "L y Vi", turno: "Tarde" },
     { nombre: "Enzo", categoria: "A", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "General", dias: "Ma y Vi", turno: "Noche" },
     { nombre: "Gabriel", categoria: "C", zona: "Liniers", actividad: "Activo", TipoDeEntrenamiento: "Boxeo", dias: "L y Mi", turno: "Noche" },
-]
+];
 
-// Array con las credenciales válidas//
-const inputUsuarioInicial = document.getElementById("floatingInput")
-const inputContraseñaInicial = document.getElementById("floatingPassword")
-const botonIngreso = document.getElementById("botonIngreso")
-
+// Array con las credenciales válidas
 const usuarios = [
     { usuario: "Angel", contraseña: "angel28" },
     { usuario: "Macarena", contraseña: "macarena26" },
     { usuario: "Bautista", contraseña: "bauti24" }
 ];
 
-// Función para validar el usuario y contraseña
-
-function validarCredenciales(usuario, contraseña) {
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].usuario === usuario && usuarios[i].contraseña === contraseña) {
-            return true; // Credenciales válidas
-        }
-    }
-    return false; // Credenciales inválidas
-}
-
-inputUsuarioInicial.addEventListener("input", validarInput);
-inputContraseñaInicial.addEventListener("input", validarInput);
-
-function validarInput() {
-    const usuario = inputUsuarioInicial.value;
-    const contraseña = inputContraseñaInicial.value;
-
-    if (validarCredenciales(usuario, contraseña)) {
-        console.log("Credenciales válidas");
-        botonIngreso.href = "home.html";  // Actualiza el atributo href del botón
-    } else {
-        console.log("Credenciales inválidas");
-        botonIngreso.removeAttribute("href");  // Elimina el atributo href del botón
-    }
-}
-
-//--------- pasar de un string a un objeto con JSON-----------//
+// Pasar de un string a un objeto con JSON
 localStorage.setItem("list", JSON.stringify(profesionales));
-profesionales = JSON.parse(localStorage.getItem("list"));
 console.log(profesionales);
 
-//---------------------------------------------------------//
-const nombreForm = document.getElementById("nombreForm")
-const mailForm = document.getElementById("mailForm")
-const celular = document.getElementById("telForm")
-const botonForm = document.getElementById("botonForm")
-const nombreProfesional = document.getElementById("profesionalForm")
-const planSeleccionado = document.getElementById("sleccionPlan")
+let mensajeAlert = "";
+const datos = []
 
-const participantes = [
-    { nombre: "Ana" }
-]
+//--------------------nombre y apellido--------------//
+/*
+const nombre = document.getElementById("nombreForm")
+nombre.addEventListener("input", () => {
+    const nombreYApellido = nombre.value
+    datos.push(nombreYApellido)
+    console.log(nombreYApellido)
+});
 
-//------nombre en el local storege----------------//
-nombreForm.addEventListener("input", () => {
-    const valorInput = nombreForm.value;
-    localStorage.setItem("valorNombre", valorInput)
+//--------------------Mail---------------------------//
+const mail = document.getElementById("mailForm")
+mail.addEventListener("input", () => {
+    const mailConfir = mail.value
+    datos.push(mailConfir)
+    console.log(mailConfir)
 })
 
-window.addEventListener("load", () => {
-    const valorGuardado = localStorage.getItem("valorNombre");
-    if (valorGuardado) {
-        nombreForm.value = valorGuardado;
-    }
-});
-
-botonForm.addEventListener("click", () => {
-    const valorInput = nombreForm.value;
-    localStorage.setItem("valorNombre", valorInput);
-});
-
-//----------mail en el local storage----------//
-mailForm.addEventListener("input", () => {
-    const valorInput = mailForm.value;
-    localStorage.setItem("valorMail", valorInput);
-});
-
-window.addEventListener("load", () => {
-    const valorGuardadoMail = localStorage.getItem("valorMail");
-    if (valorGuardadoMail) {
-        mailForm.value = valorGuardadoMail;
-    }
-});
-
-botonForm.addEventListener("click", () => {
-    const valorInput = mailForm.value;
-    localStorage.setItem("valorMail", valorInput);
-});
-//----------numero en el local storage----------//
+//--------------------celular-------------------------//
+const celular = document.getElementById("telForm");
 celular.addEventListener("input", () => {
-    const valorInputCelular = celular.value;
-    localStorage.setItem("valorCelular", valorInputCelular);
+    const tel = celular.value;
+    const numeroFinal = tel.replace(/\D/g, '');
+    datos[0] = numeroFinal;
+    console.log(numeroFinal)
 });
 
-window.addEventListener("load", () => {
-    const valorGuardadoCelular = localStorage.getItem("valorCelular");
-    if (valorGuardadoCelular) {
-        celular.value = valorGuardadoCelular;
-    }
-});
 
+//--------------------Pofesional---------------------//
+const prof = document.getElementById("profesionalForm")
+prof.addEventListener("input", () => {
+    const profe = prof.value
+    datos.push(profe)
+    console.log(profe)
+})
+
+//--------------------Plan---------------------------//
+const plan = document.getElementById("seleccionPlan")
+plan.addEventListener("input", () => {
+    const profesor = plan.value
+    datos.push(profesor)
+    console.log(profesor)
+})
+
+//--------------------Boton de confimacion-----------//
+const botonForm = document.getElementById("botonForm");
 botonForm.addEventListener("click", () => {
-    const valorInputBoton = celular.value;
-    localStorage.setItem("valorCelular", valorInputBoton);
+    Swal.fire({
+        title: '¡Buenisimo!',
+        text: 'La operación se realizó con éxito.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+    });
 });
 
-//------------Nombre del profesional--------//
-nombreProfesional.addEventListener("input", () => {
-    const valorInputProf = nombreProfesional.value;
-    localStorage.setItem("valorProfesional", valorInputProf);
-});
+*/
 
-window.addEventListener("load", () => {
-    const valorInputProf = localStorage.getItem("valorProfesional");
-    if (valorInputProf) {
-        nombreProfesional.value = valorInputProf;
-    }
-});
 
-botonForm.addEventListener("click", () => {
-    const valorBoton = nombreProfesional.value;
-    localStorage.setItem("valorProfesional", valorBoton);
-});
-
-//------------Seleccion Plan--------//
-planSeleccionado.addEventListener("input", () => {
-    const valorInputPlan = valorInputPlan.value;
-    localStorage.setItem("valorProfesional", valorInputPlan);
-});
-
-window.addEventListener("load", () => {
-    const valorInputPlan = localStorage.getItem("valorPlan");
-    if (valorInputPlan) {
-        planSeleccionado.value = valorInputPlan;
-    }
-});
-
-botonForm.addEventListener("click", () => {
-    const valorBoton = planSeleccionado.value;
-    localStorage.setItem("valorPlan", valorBoton);
-    alert(nombreForm.value + " Felicitaciones un cordinador se contactara con usted")
-});
 
 //---------Maps y plazas----------//
 
 //---------Plaza Larrazabal-------//
 
+//---------Item-------------------//
 
+const itemns = [
+    { nombre: "Clases Extras", valor: 1800 },
+    { nombre: "Invitado", valor: 1000 },
+    { nombre: "Clase particular", valor: 2000 },
+    { nombre: "Fin de semana", valor: 2000 },
+    { nombre: "Doble turno", valor: 3000 },
+    { nombre: "Acuaticas", valor: 2500 },
+    { nombre: "Para niños/as", valor: 1900 },
+    { nombre: "Plan nutricional", valor: 5000 }
+];
 
+const tarjetasItem = document.getElementsByClassName("tarjetasItem");
+const carrito = [];
 
+// Recorremos la colección de elementos y agregamos el evento click a cada uno
+for (let i = 0; i < tarjetasItem.length; i++) {
+    tarjetasItem[i].addEventListener("click", () => {
+        const itemSeleccionado = itemns[i];
+        carrito.push(itemSeleccionado);
+        console.log("Ítem seleccionado:", itemSeleccionado.nombre);
+        console.log("Carrito:", carrito);
 
-
-/*
-profesionales.forEach((Element) => console.log(Element));
-//console.log(profesionales)//imprime la lista de los elemento
-
-const participantes = [
-    { nombre: "Ana", prof: "Angel" }
-]
-
-const resultadoProfeAngel = profesionales.filter((el) => {
-    return profesionales.nombre = "Angel";
-})
-console.log(resultadoProfeAngel)
-
-const agregarParticipanteAlArray = () => {//Futura base de datos
-    const nombre = prompt("Nombre y apellido");
-    console.log(nombre);
-    const prof = prompt("Marca el profe que desea contactar: Angel, Macarena, Natalia, Enzo, Gabriel o Salir");
-    switch (prof) {
-        case "Angel":
-            alert("Nombre: Angel, Categoria: D, Zona: Liniers, Tipo De Entrenamiento: futfuncional, Dias: L y Mi, Turno: Mañana")
-            break;
-        case "Macarena":
-            alert("Nombre: Macarena, Categoria: C, Zona: Liniers, Tipo De Entrenamiento: Boxeo, Dias: Ma y J, Turno: Tarde")
-            break;
-        case "Natalia":
-            alert("Nombre: Natalia, Categoria: B, Zona: Liniers, Tipo De Entrenamiento: funcional, Dias: Ma y J, Turno: Tarde")
-            break;
-        case "Enzo":
-            alert("Nombre: Enzo, Categoria: C, Zona: Liniers, Tipo De Entrenamiento: Yoga, Dias: Ma y J, Turno: Tarde")
-            break;
-        case "Gabriel":
-            alert("Nombre: Gabriel, Categoria: A, Zona: Liniers, Tipo De Entrenamiento: General, Dias: Ma y J, Turno: Tarde")
-            break;
-        default: "Salir"
-            alert(nombre + " Gracias por tu visita")
-            break;
-    }
-    console.log(prof);
-    participantes.push({ nombre, prof: prof });
+        actualizarCarritoInterfaz(); // Actualizar la interfaz del carrito
+    });
 }
-agregarParticipanteAlArray();//proximamente base de datos
 
-participantes.forEach((Element) => console.log(Element));
+function actualizarCarritoInterfaz() {
+    const carritoList = document.getElementById("carrito-list");
+    const totalCompraSpan = document.getElementById("total-compra");
 
-alert("A continuacion selecciona el plan requerido")
+    // Limpiamos el contenido anterior
+    carritoList.innerHTML = "";
 
-const planes = [
-    { plan: "oro" },
-    { plan: "plata" } 
-]
+    // Recorremos el carrito y creamos un <li> para cada ítem
+    carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - $${item.valor}`;
 
-*/
+        agregarBotonEliminar(li, index); // Agregar botón "Eliminar" para cada ítem
+        carritoList.appendChild(li);
+    });
+
+    // Actualizamos el total de compra
+    totalCompraSpan.textContent = calcularTotalCompra();
+}
+
+function agregarBotonEliminar(li, itemIndex) {
+    const btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "Eliminar";
+    btnEliminar.addEventListener("click", () => {
+        eliminarItemCarrito(itemIndex);
+    });
+    li.appendChild(btnEliminar);
+}
+
+function eliminarItemCarrito(itemIndex) {
+    carrito.splice(itemIndex, 1);
+    actualizarCarritoInterfaz();
+}
+
+function calcularTotalCompra() {
+    let total = 0;
+    carrito.forEach((item) => {
+        total += item.valor;
+    });
+    return total;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const confirmacion = document.getElementById("confirm");
+    confirmacion.addEventListener("click", () => {
+
+        Swal.fire({
+            title: 'Confirmar compra',
+            text: '¿Deseas confirmar tu compra?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                realizarCompra();
+            } else {
+                console.log("Compra cancelada.");
+            }
+        });
+    });
+
+    function realizarCompra() {
+        Swal.fire({
+            title: '¡Compra realizada!',
+            text: '¡Gracias por tu compra!',
+            icon: 'success',
+        }).then(() => {
+
+            carrito.length = 0;
+
+            const carritoList = document.getElementById("carrito-list");
+            carritoList.innerHTML = "";
+
+            actualizarCarritoInterfaz();
+        });
+    }
+});
+
+
+    const apiKey = 'AIzaSyAix9UDfmAPvMdEqPCnk6GhMORD1PdmZbE';
+    const apiUrl = 'https://livetraining.netlify.app';
+
+    fetch(`${apiUrl}?key=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+        })
+        .catch(error => {
+        });
+
+
+
+
+
+
 
 
 
